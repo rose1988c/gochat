@@ -108,11 +108,11 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 	    
 	    // ide helper #https://github.com/barryvdh/laravel-ide-helper
-	    'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+	    //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	    // datatables #https://github.com/bllim/laravel4-datatables-package
-	    'Bllim\Datatables\DatatablesServiceProvider',
+	    //'Bllim\Datatables\DatatablesServiceProvider',
 	    //way
-	    'Way\Generators\GeneratorsServiceProvider'
+	    //'Way\Generators\GeneratorsServiceProvider'
 	),
 
 	/*
@@ -178,7 +178,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-	    'Datatables'      => 'Bllim\Datatables\Datatables',
+	    //'Datatables'      => 'Bllim\Datatables\Datatables',
 	),
 
 );
