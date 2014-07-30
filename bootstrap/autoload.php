@@ -3,11 +3,9 @@
 define('LARAVEL_START', microtime(true));
 
 // 防止composer更新的时候出错
-if (!defined('DOC_ROOT')) {
-    define('DOC_ROOT', dirname(__DIR__));
+if (!defined('KERNEL_PATH')) {
+	define('KERNEL_PATH', dirname(__DIR__));
 }
-
-define('LARAVEL_ROOT', DOC_ROOT . '/..');
 
 /*
 |--------------------------------------------------------------------------
@@ -21,16 +19,12 @@ define('LARAVEL_ROOT', DOC_ROOT . '/..');
 |
 */
 
-if (!file_exists(LARAVEL_ROOT . '/vendor/autoload.php'))
-{
-    die('Hello,boy and girl, you need have to vendor dir! please see <a href="https://github.com/laravel/laravel">github</a>');
-}
-require LARAVEL_ROOT . '/vendor/autoload.php';
-
 // 添加命名空间扩展点
-$loader = require LARAVEL_ROOT.'/vendor/autoload.php';
+$loader = require KERNEL_PATH . '/vendor/autoload.php';
 
 $loader->set('', DOC_ROOT . '/app/src');
+
+
 /*
 |--------------------------------------------------------------------------
 | Include The Compiled Class File

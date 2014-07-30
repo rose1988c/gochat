@@ -52,7 +52,7 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 |
 */
 
-$framework = LARAVEL_ROOT . '/vendor/laravel/framework/src';
+$framework = KERNEL_PATH . '/vendor/laravel/framework/src';
 
 require $framework.'/Illuminate/Foundation/start.php';
 

@@ -6,7 +6,7 @@
  * @version 1.0
  * @date 2014-6-29 下午5:05:13
  */
-Route::get('/', array('as'=>'index', 'uses' => 'HomeController@index'));
+Route::get('/', 'HomeController@index');
 
 //------------------------------- 本地使用 -------------------------------
 Route::group(array('before' => 'dev'), function()
