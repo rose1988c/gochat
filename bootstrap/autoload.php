@@ -2,11 +2,6 @@
 
 define('LARAVEL_START', microtime(true));
 
-// 防止composer更新的时候出错
-if (!defined('KERNEL_PATH')) {
-	define('KERNEL_PATH', dirname(__DIR__));
-}
-
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
@@ -19,11 +14,7 @@ if (!defined('KERNEL_PATH')) {
 |
 */
 
-// 添加命名空间扩展点
-$loader = require KERNEL_PATH . '/vendor/autoload.php';
-
-$loader->set('', DOC_ROOT . '/app/src');
-
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +27,7 @@ $loader->set('', DOC_ROOT . '/app/src');
 |
 */
 
-if (file_exists($compiled = DOC_ROOT.'/bootstrap/compiled.php'))
+if (file_exists($compiled = __DIR__.'/compiled.php'))
 {
 	require $compiled;
 }
@@ -78,7 +69,7 @@ Illuminate\Support\ClassLoader::register();
 |
 */
 
-if (is_dir($workbench = DOC_ROOT.'/workbench'))
+if (is_dir($workbench = __DIR__.'/../workbench'))
 {
 	Illuminate\Workbench\Starter::start($workbench);
 }

@@ -1,15 +1,17 @@
 <?php
-/**
- * routes.php
- * 
- * @author rose1988.c@gmail.com
- * @version 1.0
- * @date 2014-6-29 下午5:05:13
- */
-Route::get('/', 'HomeController@index');
 
-//------------------------------- 本地使用 -------------------------------
-Route::group(array('before' => 'dev'), function()
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+|
+*/
+
+Route::get('/', function()
 {
-    Route::get('/env', function(){return app::environment();});
+	return View::make('hello');
 });

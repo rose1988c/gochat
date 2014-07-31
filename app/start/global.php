@@ -10,6 +10,7 @@
 | your classes in the "global" namespace without Composer updating.
 |
 */
+
 ClassLoader::addDirectories(array(
 
 	app_path().'/commands',
@@ -18,6 +19,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/database/seeds',
 
 ));
+
 /*
 |--------------------------------------------------------------------------
 | Application Error Logger
@@ -28,10 +30,6 @@ ClassLoader::addDirectories(array(
 | build a basic log file setup which creates a single file for logs.
 |
 */
-
-// $logFile = 'log-'.php_sapi_name().'.txt';
-
-// Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
 Log::useFiles(storage_path().'/logs/laravel.log');
 
@@ -81,4 +79,3 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
-require app_path().'/common.php';

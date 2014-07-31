@@ -19,18 +19,7 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	//记录 action_log
-    $user = Auth::user();
-    if ($user && Request::isMethod('post') ) {
-        $data = array(
-            'ip' => Request::getClientIp(),
-            'url' => Request::url(),
-            'method' => Request::getMethod(),
-            'action' => Request::path(),
-            'username' => is_object($user) ? $user->username : '',
-        );
-        ActionLogModel::create($data);
-    }
+	//
 });
 
 /*
@@ -46,19 +35,17 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-    if (Auth::guest()) return Redirect::guest('login');
-});
-
-Route::filter('auth.manage', function()
-{
-    if (Auth::guest()) {
-        return Redirect::guest('login');
-    } else {
-        if (!is_admin())
-        {
-            return Redirect::to('logwait');
-        }
-    }
+	if (Auth::guest())
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('login');
+		}
+	}
 });
 
 
@@ -100,9 +87,4 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
-});
-
-Route::filter('dev', function()
-{
-    if (app()->environment() != 'dev') return Redirect::to(route('index'));
 });
