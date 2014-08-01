@@ -13,8 +13,10 @@ define('LARAVEL_START', microtime(true));
 | loading of any our classes "manually". Feels great to relax.
 |
 */
+// 添加命名空间扩展点
+$loader = require __DIR__.'/../vendor/autoload.php';
 
-require __DIR__.'/../vendor/autoload.php';
+$loader->set('', __DIR__ . '/../app/src');
 
 /*
 |--------------------------------------------------------------------------
