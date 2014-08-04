@@ -10,5 +10,8 @@
  */
 class ChatController extends BaseController
 {
-    
+    public function index()
+    {
+        return 'hello';
+    }
 }
