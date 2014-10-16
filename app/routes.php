@@ -16,6 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+<<<<<<< HEAD
 Route::group(array('prefix' => 'cron'), function(){
 
     Route::get('/', function()
@@ -24,3 +25,6 @@ Route::group(array('prefix' => 'cron'), function(){
     });
 
     });
+=======
+Route::get('/chat', 'ChatController@index');
+>>>>>>> 51ca7a3172409ce74f5cbac4de46768573c3104c
