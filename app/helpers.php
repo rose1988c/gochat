@@ -10,7 +10,7 @@ function curl_setopt_check($url, $options = array())
     // 开启线程资源
     $ci = curl_init($url);
     curl_setopt($ci, CURLOPT_FAILONERROR, true);
-    curl_setopt($ci, CURLOPT_FOLLOWLOCATION, true);
+    //curl_setopt($ci, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($ci, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ci, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, false);
