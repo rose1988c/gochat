@@ -9,6 +9,14 @@
 class CronController extends BaseController
 {
 
+    public function index()
+    {
+        echo '<pre>';
+        print_r('-- qq --');
+        echo '</pre>';
+        die();
+    }
+    
     public function qq()
     {
         $url = 'http://pt5.3g.qq.com/s?aid=nLogin3gqqbysid&3gqqsid=';
